@@ -1,22 +1,20 @@
 <template>
-  <v-footer class="bg-grey-lighten-4 text-center d-flex flex-column">
-    <v-row class="pt-0">
-      <v-col v-for="icon in icons" :key="icon">
-        <v-btn :icon="icon" variant="text" />
-      </v-col>
-    </v-row>
-    <v-select
-      :items="locales"
-      density="compact"
-      v-model="locale"
-      variant="solo"
-    />
-  </v-footer>
+  <el-footer class="bg-zinc-200 rounded-lg ma-0 align-middle flex items-center justify-center">
+    <svg-icon size="24" v-for="icon in icons" :key="icon" class="icon-btn mx-2" type="mdi" :path="icon" />
+    <!-- <div class="flex-grow"></div> -->
+    <el-select v-model="locale" style="width: 100px">
+      <el-option v-for="item in localeOptions" :key="item.value" :label="item.label" :value="item.value" />
+    </el-select>
+
+  </el-footer>
 </template>
 
 <script setup lang="ts">
-const icons = ["mdi-facebook", "mdi-twitter", "mdi-linkedin", "mdi-instagram"];
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiFacebook, mdiTwitter, mdiLinkedin, mdiInstagram, } from '@mdi/js'
+const icons = [mdiFacebook, mdiTwitter, mdiLinkedin, mdiInstagram];
 const locales = useLocales();
 const locale = useLocale();
+const localeOptions = locales.value.map((x) => ({ label: x.substring(0, 5), value: x }))
 // const date = useLocaleDate(new Date("2016-10-26") /* NUXT_BIRTHDAY */);
 </script>

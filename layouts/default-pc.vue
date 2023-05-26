@@ -1,11 +1,16 @@
 <template>
-  <v-layout>
-    <LayoutAppBarTop />
-    <v-main>
-      <v-container class="pa-0" fluid>
-        <slot />
-      </v-container>
-      <LayoutFooter />
-    </v-main>
-  </v-layout>
+  <el-container class="bg-zinc-100" direction="vertical">
+    <layout-app-bar-top />
+    <el-main>
+      <slot />
+    </el-main>
+
+    <layout-footer />
+  </el-container>
 </template>
+<style>
+body {
+  padding: 0 !important;
+  margin: 0 !important
+}
+</style>

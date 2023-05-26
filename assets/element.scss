@@ -1,0 +1,23 @@
+// @use 'sass:math';
+// @use 'sass:map';
+
+.el-main {
+    --el-main-padding: 0px !important;
+    display: block;
+    flex: 1;
+    flex-basis: auto;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: var(--el-main-padding);
+}
+// You should use them in scss, because we calculate it by sass.
+// comment next lines to use default color
+
+// if you want to import all
+// @use "element-plus/theme-chalk/src/index.scss" as *;
+
+// You can comment it to hide debug info.
+// @debug $--colors;
+
+// custom dark variables
+// @use "./dark.scss";

@@ -1,11 +1,11 @@
 <template>
-  <v-layout>
-    <LayoutAppBarTop />
-    <v-main>
-      <v-container class="py-8 px-6" fluid>
-        pc layout
-        <slot />
-      </v-container>
-    </v-main>
-  </v-layout>
+  <el-container>
+    <layout-app-bar-top />
+    <el-main>
+      mobile layout
+      <slot />
+    </el-main>
+
+    <layout-footer />
+  </el-container>
 </template>

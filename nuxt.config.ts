@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ["@element-plus/nuxt", "@vueuse/nuxt"],
+  // elementPlus: {
+  //   /** Options */
+  // },
+  imports: {},
   typescript: {
     shim: false,
     strict: true,
@@ -10,15 +15,13 @@ export default defineNuxtConfig({
       strict: true,
     },
   },
-  css: ["vuetify/lib/styles/main.sass"],
-  build: {
-    transpile: ["vuetify"],
-  },
+  build: {},
   vite: {
     define: {
       "process.env.DEBUG": false,
     },
   },
+  css: ["@/assets/element.scss"],
   routeRules: {
     // TODO: 상품 상세 페이지등 SEO 노출 및 수정 될만한 페이지
     "/blog/**": { swr: true, cors: true },
