@@ -29,6 +29,12 @@
   box-sizing: border-box;
   padding: var(--el-main-padding);
 }
+
+.el-menu--horizontal > .el-menu-item.is-active {
+  border-bottom: none;
+  color: none;
+}
+
 // You should use them in scss, because we calculate it by sass.
 // comment next lines to use default color
 

@@ -11,7 +11,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
         @select="handleSelect">
         <el-menu-item index="/"><el-image fit="contain" src="/logo.png" /></el-menu-item>
         <div class="flex-grow" />
-        <el-menu-item index="/intro">회사소개</el-menu-item>
+        <!-- <el-menu-item index="/intro">회사소개</el-menu-item>
         <el-sub-menu index="/service">
             <template #title>서비스</template>
             <el-menu-item index="/service/milk-run">밀크런</el-menu-item>
@@ -20,7 +20,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
             <template #title>고객지원</template>
             <el-menu-item index="/cs/inquiry">문의목록</el-menu-item>
             <el-menu-item index="/cs/inquiry/write">문의하기</el-menu-item>
-        </el-sub-menu>
+        </el-sub-menu> -->
     </el-menu>
 </template>
 

@@ -6,6 +6,7 @@
     </el-main>
 
     <layout-footer />
+    <inquiry-fab />
   </el-container>
 </template>
 <style>

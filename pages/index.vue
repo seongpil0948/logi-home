@@ -74,13 +74,13 @@
       </el-card>
 
     </section>
-    <section ref='container' class="jb-box jb-box-img">
+    <section ref='container' class="jb-box jb-box-img mt-3">
       <video muted autoplay loop>
         <source src="/video/working.mp4" type="video/mp4" />
       </video>
-      <div class="jb-text">
+      <!-- <div class="jb-text">
         <el-button type="primary" size="large">현장 갤러리 보러가기</el-button>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
