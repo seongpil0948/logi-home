@@ -81,9 +81,6 @@ devDependencies:
   vitest:
     specifier: ^0.31.1
     version: 0.31.1(jsdom@22.1.0)(sass@1.62.1)
-  vue:
-    specifier: ^3.3.4
-    version: 3.3.4
 
 packages:
 
