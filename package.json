@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "test": "vitest",
+    "test:unit:watch": "vitest",
+    "test:unit": "vitest run",
     "coverage": "vitest run --coverage"
   },
   "devDependencies": {
