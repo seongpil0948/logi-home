@@ -60,7 +60,7 @@ const rules = reactive<FormRules>({
 <template>
     <el-popover trigger="click" placement="left" :width="600">
         <template #reference>
-            <el-button size="large" circle
+            <el-button size="large" circle data-test="inquiry-fab-trigger-btn"
                 style=" width: 3rem;height: 3rem; position: fixed; bottom: 10%; right: 10%; font-size: 1.1rem;"
                 type="primary">문의</el-button>
         </template>
