@@ -1,3 +1,5 @@
+# TODO
+- vue test utils to nuxt test utils
 # 테스트의 유형
 우리는 우리의 앱을 여러 유형과 단계로 테스트 함으로써 의도에 따라 동작하는지 더욱 자신감을 가질 수 있습니다.  
 아래 유형 별 간단한 설명을 첨부 하였지만, 모든 테스트가 프로젝트 시작부터 구성 될 필요는 없습니다.
@@ -38,5 +40,6 @@ __TypeScript__ 및 __ESLint(린터)__ 는 이러한 유형의 테스트를 수�
 
 # Refer
 - https://test-utils.vuejs.org/
+- https://nuxt.com/docs/getting-started/testing#testing
 - https://vitest.dev/guide/test-context.html
 - https://github.com/vitest-dev/vitest/tree/main/examples/playwright
