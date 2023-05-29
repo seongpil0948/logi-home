@@ -48,9 +48,6 @@ devDependencies:
   '@vitest/coverage-c8':
     specifier: ^0.31.1
     version: 0.31.1(vitest@0.31.1)
-  '@vue/runtime-dom':
-    specifier: ^3.3.4
-    version: 3.3.4
   '@vue/test-utils':
     specifier: ^2.3.2
     version: 2.3.2(vue@3.3.4)
