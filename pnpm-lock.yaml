@@ -81,6 +81,9 @@ devDependencies:
   unocss:
     specifier: ^0.52.4
     version: 0.52.4(@unocss/webpack@0.52.4)(postcss@8.4.24)(vite@4.3.9)
+  vite:
+    specifier: ^4.3.9
+    version: 4.3.9(@types/node@20.2.5)(sass@1.62.1)
   vitest:
     specifier: ^0.31.1
     version: 0.31.1(jsdom@22.1.0)(sass@1.62.1)
