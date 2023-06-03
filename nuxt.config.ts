@@ -1,10 +1,37 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@element-plus/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
+  app: {
+    // head
+    head: {
+      title: "Logione",
+      meta: [
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        {
+          hid: "description",
+          name: "description",
+          content: "Logione Description",
+        },
+      ],
+      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    },
+  },
+  modules: [
+    "@vueuse/nuxt",
+    "@unocss/nuxt",
+    "@pinia/nuxt",
+    "@element-plus/nuxt",
+  ],
   // elementPlus: {
   //   /** Options */
   // },
   imports: {},
+  unocss: {
+    uno: true,
+    attributify: true,
+    icons: {
+      scale: 1.2,
+    },
+  },
   typescript: {
     shim: false,
     strict: true,
@@ -20,8 +47,15 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": false,
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use "@/assets/element.scss" as element;`,
+        },
+      },
+    },
   },
-  css: ["@/assets/element.scss"],
+  // css: ["@/assets/element.scss"],
   routeRules: {
     // TODO: 상품 상세 페이지등 SEO 노출 및 수정 될만한 페이지
     "/blog/**": { swr: true, cors: true },
@@ -30,5 +64,16 @@ export default defineNuxtConfig({
     // 검색엔진 노출이 필요없는 기능페이지
     "/admin/**": { ssr: false, headers: { "cache-control": "s-maxage=0" } },
     "/api/**": { cors: true },
+  },
+  nitro: {
+    preset: "firebase",
+    replace: {
+      [`functions.https.onRequest`]: `functions.region('asia-northeast3').https.onRequest`,
+    },
+  },
+  elementPlus: {
+    icon: "ElIcon",
+    importStyle: "scss",
+    themes: ["dark"],
   },
 });
