@@ -16,6 +16,11 @@
 //     /* 이런식으로 weight를 지정해서 사용할 수도 있다!*/
 //     font-weight: 400;
 // }
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .el-header {
   padding: 0px !important;
