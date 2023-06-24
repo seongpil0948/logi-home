@@ -1,7 +1,7 @@
 <template>
   <el-footer class="bg-zinc-200 rounded-lg ma-0 align-middle flex items-center justify-center">
     <svg-icon size="24" v-for="icon in icons" :key="icon" class="icon-btn mx-2" type="mdi" :path="icon" />
-    <!-- <div class="flex-grow"></div> -->
+    <div class="flex-grow"></div>
     <el-select v-model="locale" style="width: 100px">
       <el-option v-for="item in localeOptions" :key="item.value" :label="item.label" :value="item.value" />
     </el-select>
@@ -16,5 +16,5 @@ const icons = [mdiFacebook, mdiTwitter, mdiLinkedin, mdiInstagram];
 const locales = useLocales();
 const locale = useLocale();
 const localeOptions = locales.value.map((x) => ({ label: x.substring(0, 5), value: x }))
-// const date = useLocaleDate(new Date("2016-10-26") /* NUXT_BIRTHDAY */);
+const date = useLocaleDate(new Date("2016-10-26") /* NUXT_BIRTHDAY */);
 </script>

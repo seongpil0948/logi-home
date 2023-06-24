@@ -22,24 +22,38 @@
   align-items: center;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+}
 .el-header {
   padding: 0px !important;
 }
 .el-main {
   --el-main-padding: 0px !important;
-  display: block;
+  display: flex;
   flex: 1;
   flex-basis: auto;
   overflow: auto;
   box-sizing: border-box;
   padding: var(--el-main-padding);
+  min-height: 100%;
+  justify-content: center;
+  align-content: center;
 }
 
 .el-menu--horizontal > .el-menu-item.is-active {
   border-bottom: none;
   color: none;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 
+.my-auto {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
 // You should use them in scss, because we calculate it by sass.
 // comment next lines to use default color
 

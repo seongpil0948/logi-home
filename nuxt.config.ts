@@ -20,11 +20,14 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@pinia/nuxt",
     "@element-plus/nuxt",
+    "@nuxtjs/i18n",
   ],
   // elementPlus: {
   //   /** Options */
   // },
-  imports: {},
+  imports: {
+    dirs: ["composables/**", "store"],
+  },
   unocss: {
     uno: true,
     attributify: true,
@@ -55,6 +58,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  // generate: {
+  //   exclude: ["/^/admin/"],
+  // },
   // css: ["@/assets/element.scss"],
   routeRules: {
     // TODO: 상품 상세 페이지등 SEO 노출 및 수정 될만한 페이지
@@ -63,6 +69,7 @@ export default defineNuxtConfig({
     "/articles/**": { static: true, cors: true },
     // 검색엔진 노출이 필요없는 기능페이지
     "/admin/**": { ssr: false, headers: { "cache-control": "s-maxage=0" } },
+    // "/admin/**": { swr: true, headers: { "cache-control": "s-maxage=0" } },
     "/api/**": { cors: true },
   },
   nitro: {

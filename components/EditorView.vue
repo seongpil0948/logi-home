@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { EditorOptions } from '@toast-ui/editor'
+import type { CustomHTMLRenderer, EditorOptions } from '@toast-ui/editor'
 import Editor from '@toast-ui/editor'
 import '@toast-ui/editor/dist/toastui-editor.css' // Editor's Style
 
@@ -23,10 +23,25 @@ onMounted(() => {
   const el = document.querySelector('#viewer')
   if (!el)
     return
+  const customHTMLRenderer: CustomHTMLRenderer = {
+    htmlBlock: {
+      iframe: (node) => [
+        {
+          type: 'openTag',
+          tagName: 'iframe',
+          outerNewLine: true,
+          attributes: node.attrs
+        },
+        { type: 'html', content: node.childrenHTML ?? "" },
+        { type: 'closeTag', tagName: 'iframe', outerNewLine: false }
+      ]
+    }
+  }
   viewer.value = new Editor({
     el,
     initialValue: props.content,
-    viewer: true
+    viewer: true,
+    customHTMLRenderer
   } as EditorOptions)
 })
 </script>

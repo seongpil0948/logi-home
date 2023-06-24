@@ -21,12 +21,9 @@ const handleSelect = (key: string, keyPath: string[]) => {
             <el-menu-item index="/cs/inquiry">문의목록</el-menu-item>
             <el-menu-item index="/cs/inquiry/write">문의하기</el-menu-item>
         </el-sub-menu> -->
+        <!-- <el-menu-item index="/"><el-button @click="() => $router.push('')">고객지원</el-button></el-menu-item> -->
+        <el-menu-item class="my-auto" index="/post"><el-button>고객지원</el-button></el-menu-item>
+
     </el-menu>
 </template>
 
-
-<style>
-.flex-grow {
-    flex-grow: 1;
-}
-</style>

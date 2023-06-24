@@ -1,5 +1,5 @@
 <template>
-  <el-container class="bg-zinc-100" direction="vertical">
+  <el-container class="bg-zinc-100; w-screen; h-screen" direction="vertical">
     <layout-app-bar-top />
     <el-main>
       <slot />
