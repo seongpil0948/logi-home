@@ -10,8 +10,6 @@ export interface IPost {
   title: string;
   content: string;
   order: number;
-  parentId?: string;
-  isCategory: boolean;
   createDate: Date;
   updateDate: Date;
 }

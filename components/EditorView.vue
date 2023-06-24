@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import type { CustomHTMLRenderer, EditorOptions } from '@toast-ui/editor'
-import Editor from '@toast-ui/editor'
-import '@toast-ui/editor/dist/toastui-editor.css' // Editor's Style
+import Viewer from '@toast-ui/editor/dist/toastui-editor-viewer';
+import '@toast-ui/editor/dist/toastui-editor-viewer.css';
 
 const props = defineProps<{
   content: string // Initial value. Set Markdown string
 }>()
 // eslint-disable-next-line vue/no-dupe-keys
 const { content } = toRefs(props)
-const viewer = shallowRef<Editor | undefined>()
+const viewer = shallowRef<Viewer | undefined>()
 
 watch(() => content.value, (c) => {
   console.log('mark down: ', c)
@@ -37,11 +37,12 @@ onMounted(() => {
       ]
     }
   }
-  viewer.value = new Editor({
+  viewer.value = new Viewer({
     el,
     initialValue: props.content,
     viewer: true,
-    customHTMLRenderer
+    customHTMLRenderer,
+
   } as EditorOptions)
 })
 </script>

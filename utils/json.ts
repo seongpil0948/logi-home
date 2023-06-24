@@ -13,7 +13,6 @@ export function commonToJson(c: any) {
 }
 
 export function commonFromJson(data: { [k: string]: any }) {
-  console.info("commonFromJson: ", data);
   Object.keys(data).forEach((k) => {
     if (data[k] instanceof Timestamp) {
       data[k] = loadDate(data[k]);

@@ -2,6 +2,7 @@
 
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiFaceAgent } from '@mdi/js'
+import { PostPart } from '@/types';
 </script>
 <template>
     <el-card w-screen>
@@ -14,15 +15,21 @@ import { mdiFaceAgent } from '@mdi/js'
             </el-tab-pane>
             <el-tab-pane>
                 <template #label>
-                    <div class="custom-tabs-label">서비스</div>
+                    <div class="custom-tabs-label">고객센터</div>
                 </template>
-                <post-table />
+                <post-table :part="PostPart.CS" />
             </el-tab-pane>
             <el-tab-pane>
                 <template #label>
                     <div class="custom-tabs-label">갤러리</div>
                 </template>
-                GALLERY
+                <post-table :part="PostPart.GALLERY" />
+            </el-tab-pane>
+            <el-tab-pane>
+                <template #label>
+                    <div class="custom-tabs-label">서비스</div>
+                </template>
+                <post-table :part="PostPart.SERVICE" />
             </el-tab-pane>
         </el-tabs>
     </el-card>

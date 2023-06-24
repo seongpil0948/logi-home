@@ -30,7 +30,7 @@ const AI_PLUGIN = AutoImport({
         "Unsubscribe",
       ],
       vitest: ["describe", "test", "expect"],
-      "@faker-js/faker": [["faker", "fk"]],
+      "@faker-js/faker/locale/ko": [["faker", "fk"]],
     },
   ],
 

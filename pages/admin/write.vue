@@ -59,7 +59,6 @@ const submitForm = (formEl: FormInstance | undefined) => {
                 title: postModel.title ?? "",
                 content: contentRef.value?.getMarkdown() ?? '',
                 order: postModel.order ?? -1,
-                isCategory: false,
                 createDate: new Date(),
                 updateDate: new Date()
             }

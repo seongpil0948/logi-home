@@ -12,7 +12,7 @@ declare global {
   const describe: typeof import('vitest')['describe']
   const doc: typeof import('firebase/firestore')['doc']
   const expect: typeof import('vitest')['expect']
-  const fk: typeof import('@faker-js/faker')['faker']
+  const fk: typeof import('@faker-js/faker/locale/ko')['faker']
   const getDoc: typeof import('firebase/firestore')['getDoc']
   const getDocs: typeof import('firebase/firestore')['getDocs']
   const getFirestore: typeof import('firebase/firestore')['getFirestore']
@@ -36,7 +36,7 @@ declare module 'vue' {
     readonly describe: UnwrapRef<typeof import('vitest')['describe']>
     readonly doc: UnwrapRef<typeof import('firebase/firestore')['doc']>
     readonly expect: UnwrapRef<typeof import('vitest')['expect']>
-    readonly fk: UnwrapRef<typeof import('@faker-js/faker')['faker']>
+    readonly fk: UnwrapRef<typeof import('@faker-js/faker/locale/ko')['faker']>
     readonly getDoc: UnwrapRef<typeof import('firebase/firestore')['getDoc']>
     readonly getDocs: UnwrapRef<typeof import('firebase/firestore')['getDocs']>
     readonly getFirestore: UnwrapRef<typeof import('firebase/firestore')['getFirestore']>
@@ -58,7 +58,7 @@ declare module '@vue/runtime-core' {
     readonly describe: UnwrapRef<typeof import('vitest')['describe']>
     readonly doc: UnwrapRef<typeof import('firebase/firestore')['doc']>
     readonly expect: UnwrapRef<typeof import('vitest')['expect']>
-    readonly fk: UnwrapRef<typeof import('@faker-js/faker')['faker']>
+    readonly fk: UnwrapRef<typeof import('@faker-js/faker/locale/ko')['faker']>
     readonly getDoc: UnwrapRef<typeof import('firebase/firestore')['getDoc']>
     readonly getDocs: UnwrapRef<typeof import('firebase/firestore')['getDocs']>
     readonly getFirestore: UnwrapRef<typeof import('firebase/firestore')['getFirestore']>
