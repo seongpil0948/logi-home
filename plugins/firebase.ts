@@ -2,7 +2,6 @@
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
 import { initializeFirestore } from "firebase/firestore";
-
 export default defineNuxtPlugin({
   name: "plugin-firebase",
   enforce: "pre", // or 'post'
@@ -26,7 +25,7 @@ export default defineNuxtPlugin({
     const store = initializeFirestore(app, {
       // experimentalAutoDetectLongPolling: isTest,
     });
-    console.info("setup plugin firebase ", nuxtApp);
+    // console.info("setup plugin firebase ", nuxtApp);
     return {
       provide: {
         firebase: {

@@ -1,20 +1,10 @@
-import {
-  onSnapshot,
-  query,
-  where,
-  limit,
-  getFirestore,
-  collection,
-  Unsubscribe,
-  getDocs,
-} from "firebase/firestore";
 import { defineStore, acceptHMRUpdate } from "pinia";
 import { IPost } from "types";
 
 const cvt = fireConverter<IPost>();
 export const usePostStore = () => {
   const innerStore = defineStore("post", () => {
-    const postAll = ref<IPost[]>([]);
+    const postAll = shallowRef<IPost[]>([]);
     const fillPosts = async () => {
       const snap = await getDocs(
         collection(getFirestore(), "posts").withConverter(cvt)

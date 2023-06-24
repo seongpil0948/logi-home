@@ -1,8 +1,3 @@
-import {
-  QuerySnapshot,
-  QueryDocumentSnapshot,
-  WithFieldValue,
-} from "@firebase/firestore";
 export function handleReadSnap<T>(
   snap: QuerySnapshot<T | null>,
   arr: T[],

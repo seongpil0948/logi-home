@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { doc, setDoc } from "@firebase/firestore";
 import { uuidv4 } from "@firebase/util";
 import { FormInstance } from "element-plus";
 import { IPost, PostPart, IPostForm } from "~/types";

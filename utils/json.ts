@@ -1,5 +1,3 @@
-import { Timestamp } from "firebase/firestore";
-
 export function commonToJson(c: any) {
   const dateKeys: string[] = [];
   Object.entries(c).forEach(([k, v]) => {

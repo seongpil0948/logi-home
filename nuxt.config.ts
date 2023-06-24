@@ -1,3 +1,46 @@
+import vueJsx from "@vitejs/plugin-vue-jsx";
+import AutoImport from "unplugin-auto-import/vite";
+
+const AI_PLUGIN = AutoImport({
+  // targets to transform
+  include: [
+    /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+    /\.vue$/,
+    /\.vue\?vue/, // .vue
+    // /\.md$/ // .md
+  ],
+
+  // global imports to register
+  imports: [
+    {
+      "firebase/firestore": [
+        "doc",
+        "updateDoc",
+        "getDoc",
+        "setDoc",
+        "getDocs",
+        "onSnapshot",
+        "Timestamp",
+        "QuerySnapshot",
+        "WithFieldValue",
+        "collection",
+        "getFirestore",
+        "withConverter",
+        "query",
+        "Unsubscribe",
+      ],
+      vitest: ["describe", "test", "expect"],
+      "@faker-js/faker": [["faker", "fk"]],
+    },
+  ],
+
+  // Filepath to generate corresponding .d.ts file.
+  // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
+  dts: "./auto-imports.d.ts",
+  // see https://github.com/unjs/unimport/pull/15 and https://github.com/unjs/unimport/pull/72
+  vueTemplate: true,
+});
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -20,7 +63,6 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@pinia/nuxt",
     "@element-plus/nuxt",
-    "@nuxtjs/i18n",
   ],
   // elementPlus: {
   //   /** Options */
@@ -57,6 +99,12 @@ export default defineNuxtConfig({
         },
       },
     },
+    plugins: [
+      vueJsx({
+        // options are passed on to @vue/babel-plugin-jsx
+      }),
+      AI_PLUGIN,
+    ],
   },
   // generate: {
   //   exclude: ["/^/admin/"],
