@@ -54,9 +54,9 @@ const data = computed(() => part?.value
 </script>
 
 <template>
-    <el-card>
+    <el-card style="min-width: width * 0.8; min-height: height;">
         <el-table-v2 :row-event-handlers="handler" :row-key="rowKey" :columns="columns" :data="data" class="mx-auto"
-            :width="width * 0.8" :height="height" fixed>
+            row-class="cursor-pointer" :width="width * 0.8" :height="height" fixed>
             <template #empty>
                 <div class="flex items-center justify-center h-100%">
                     <el-empty />
