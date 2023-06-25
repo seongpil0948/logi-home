@@ -3,7 +3,7 @@
     <svg-icon size="24" v-for="icon in icons" :key="icon" class="icon-btn mx-2" type="mdi" :path="icon" />
     <div class="flex-grow"></div>
     <el-select v-model="locale" style="width: 100px">
-      <el-option v-for="item in localeOptions" :key="item.value" :label="item.label" :value="item.value" />
+      <el-option v-for="item in ['ko', 'en']" :key="item" :label="item" :value="item" />
     </el-select>
 
   </el-footer>
@@ -13,8 +13,5 @@
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiFacebook, mdiTwitter, mdiLinkedin, mdiInstagram, } from '@mdi/js'
 const icons = [mdiFacebook, mdiTwitter, mdiLinkedin, mdiInstagram];
-const locales = useLocales();
-const locale = useLocale();
-const localeOptions = locales.value.map((x) => ({ label: x.substring(0, 5), value: x }))
-const date = useLocaleDate(new Date("2016-10-26") /* NUXT_BIRTHDAY */);
+const { locale } = useI18n()
 </script>

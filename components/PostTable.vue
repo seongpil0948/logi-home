@@ -24,12 +24,17 @@ const handler: RowEventHandlers = {
         $router.push(`/post/${d.part}-${d.category ?? 'default'}/${String(d.id)}`)
     }
 }
+
+const { t } = useI18n()
 const columns = computed<Column[]>(() => [
     {
         key: 'part',
         dataKey: `part`,
         title: '분류',
         width: width.value * 0.1,
+        cellRenderer: (p: { cellData: IPost }) => {
+            return <p> {t(`postPart.${p.cellData}`)} </p>
+        },
     },
     {
         key: 'title',

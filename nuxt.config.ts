@@ -63,6 +63,7 @@ export default defineNuxtConfig({
     "@unocss/nuxt",
     "@pinia/nuxt",
     "@element-plus/nuxt",
+    "@nuxtjs/i18n",
   ],
   // elementPlus: {
   //   /** Options */
@@ -137,5 +138,8 @@ export default defineNuxtConfig({
       "defineStore", // import { defineStore } from 'pinia'
       ["defineStore", "definePiniaStore"], // import { defineStore as definePiniaStore } from 'pinia'
     ],
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts", // if you are using custom path, default
   },
 });
